@@ -1,0 +1,13 @@
+//data.txt file
+{
+    "name" : "Parul Sahni",
+    "age" : 20,
+    "email":"parulsahni3282@gmail.com",
+    "company":"Gemini"
+}
+{
+    "name" : "Parul Sahni",
+    "age" : 20,
+    "email":"parulsahni3282@gmail.com",
+    "company":"Gemini"
+}
