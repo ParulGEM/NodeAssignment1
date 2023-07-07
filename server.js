@@ -1,14 +1,19 @@
 const http = require("http");
 const fs = require("fs");
 
-const server = http.createServer((req, res) => {
-  if (req.url === "/" && req.method === "GET") {
-    fs.readFile("text.json", "utf8", (err, data) => {
+const server = http.createServer((req, res) => 
+  {
+  if (req.url === "/" && req.method === "GET") 
+  {
+    fs.readFile("text.json", "utf8", (err, data) => 
+      {
       if (err) {
         res.statusCode = 500;
         res.end("Error reading the JSON file");
-      } else {
-        try {
+      } else 
+      {
+        try 
+        {
           const jData = JSON.parse(data);
           const resp = {
             msg: "Data retrieved !!",
@@ -16,7 +21,8 @@ const server = http.createServer((req, res) => {
           };
           const respData = JSON.stringify(resp);
 
-          fs.appendFile("data.txt", data + "\n", "utf8", (err) => {
+          fs.appendFile("data.txt", data + "\n", "utf8", (err) => 
+            {
             if (err) {
               res.statusCode = 500;
               res.end("Error to file");
@@ -25,13 +31,15 @@ const server = http.createServer((req, res) => {
               res.end(respData);
             }
           });
-        } catch (err) {
+        } catch (err) 
+        {
           res.statusCode = 500;
           res.end("Error parsing JSON");
         }
       }
     });
-  } else {
+  } else 
+  {
     res.statusCode = 404;
     res.end("Data Not found");
   }
